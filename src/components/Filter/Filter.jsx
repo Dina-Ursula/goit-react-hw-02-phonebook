@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Filter = ({ value, onChange }) => {
   return (
-    <label htmlFor="">
+    <label>
       Find contacts by name
       <input type="text" value={value} onChange={onChange} />
     </label>

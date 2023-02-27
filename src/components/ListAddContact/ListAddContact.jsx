@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const ContactsSection = ({ contacts }) => {
+const ContactsSection = ({ contacts, onDeleteContact }) => {
   return (
     <ul>
       {contacts.map(({ name, id, number }) => (
@@ -8,11 +9,21 @@ const ContactsSection = ({ contacts }) => {
           <p>
             {name}: {number}
           </p>
-          <button>delete</button>
+          <button onClick={() => onDeleteContact(id)}>delete</button>
         </li>
       ))}
     </ul>
   );
 };
 
+ContactsSection.propTypes = {
+  onDeleteContact: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.number.isRequired,
+    })
+  ),
+};
 export default ContactsSection;
