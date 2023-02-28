@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FindContainer, FindInput } from './Filter.styled';
 
 const Filter = ({ value, onChange }) => {
   return (
-    <label>
+    <FindContainer>
       Find contacts by name
-      <input type="text" value={value} onChange={onChange} />
-    </label>
+      <FindInput type="text" value={value} onChange={onChange} />
+    </FindContainer>
   );
 };
 

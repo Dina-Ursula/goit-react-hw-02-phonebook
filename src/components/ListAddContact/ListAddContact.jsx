@@ -1,18 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  ListContacts,
+  NameData,
+  NameNumber,
+  ButtonDelete,
+} from './ListAddContact.styled';
 
 const ContactsSection = ({ contacts, onDeleteContact }) => {
   return (
-    <ul>
+    <ListContacts>
       {contacts.map(({ name, id, number }) => (
-        <li key={id}>
-          <p>
+        <NameData key={id}>
+          <NameNumber>
             {name}: {number}
-          </p>
-          <button onClick={() => onDeleteContact(id)}>delete</button>
-        </li>
+          </NameNumber>
+          <ButtonDelete onClick={() => onDeleteContact(id)}>
+            delete
+          </ButtonDelete>
+        </NameData>
       ))}
-    </ul>
+    </ListContacts>
   );
 };
 
@@ -26,4 +34,5 @@ ContactsSection.propTypes = {
     })
   ),
 };
+
 export default ContactsSection;
