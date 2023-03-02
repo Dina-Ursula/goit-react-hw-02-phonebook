@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FindContainer, FindInput } from './Filter.styled';
 
 const Filter = ({ value, onChange }) => {
